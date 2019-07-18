@@ -3,6 +3,7 @@ package com.controller;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -16,6 +17,7 @@ import com.model.Queries;
 import com.service.QueriesService;
 
 @Controller
+@Scope("session")
 public class HomeController {
 
 	@RequestMapping({ "/index", "/index1" })
