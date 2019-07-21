@@ -9,6 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -121,7 +122,6 @@ public class Customer implements Serializable{
 	public void setShippingAddress(ShippingAddress shippingAddress) {
 		this.shippingAddress = shippingAddress;
 	}
-
 	public Cart getCart() {
 		return cart;
 	}
