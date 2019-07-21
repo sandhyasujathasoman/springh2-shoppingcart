@@ -17,7 +17,6 @@ import com.model.Queries;
 import com.service.QueriesService;
 
 @Controller
-@Scope("session")
 public class HomeController {
 
 	@RequestMapping({ "/index", "/index1" })

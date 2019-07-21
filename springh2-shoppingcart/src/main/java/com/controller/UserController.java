@@ -19,7 +19,6 @@ import com.model.User;
 import com.service.CustomerService;
 
 @Controller
-@Scope("session")
 public class UserController {
 
 	@Autowired

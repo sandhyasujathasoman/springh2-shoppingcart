@@ -1,7 +1,6 @@
 package com.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
@@ -16,7 +15,6 @@ import com.service.CartService;
 import com.service.CustomerService;
 
 @Controller
-@Scope("session")
 public class CartController {
 
 	@Autowired

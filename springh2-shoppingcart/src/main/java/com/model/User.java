@@ -13,7 +13,6 @@ import org.springframework.context.annotation.Scope;
 
 @Entity
 @Table(name = "users")
-@Scope("session")
 public class User implements Serializable {
 
 	private static final long serialVersionUID = 2681531852204068105L;
