@@ -22,7 +22,7 @@
  
     <!-- Specifying the Resource location to load JS, CSS, Images etc -->
     <mvc:resources mapping="/resources/**" location="/WEB-INF/resources/" />
- 
+ 	<mvc:resources mapping="/favicon.ico" location="/favicon.ico" />
     <!-- View Resolver -->
     <bean
         class="org.springframework.web.servlet.view.InternalResourceViewResolver">
