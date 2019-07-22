@@ -1,0 +1,1 @@
+oc new-app redhat-openjdk18-openshift:1.3~https://github.com/sandhyasujathasoman/springh2-shoppingcart.git --context-dir=ShoppingCart
