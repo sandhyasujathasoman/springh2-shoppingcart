@@ -34,7 +34,7 @@
     <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource"
         id="dataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
-        <property name="url" value="jdbc:mysql://mysql:3306/shoppingcart&useSSL=false"></property>
+        <property name="url" value="jdbc:mysql://mysql:3306/shoppingcart?useSSL=false"></property>
         <property name="username" value="user"></property>
         <property name="password" value="password"></property>
     </bean>
