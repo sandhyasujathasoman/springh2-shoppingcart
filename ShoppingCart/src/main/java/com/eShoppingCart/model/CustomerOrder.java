@@ -7,8 +7,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="customerorder")
 public class CustomerOrder implements Serializable{
 
 	private static final long serialVersionUID = -3855413396475009737L;

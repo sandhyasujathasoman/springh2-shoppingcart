@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
+@Table(name="customer")
 public class Customer implements Serializable{
 
 	private static final long serialVersionUID = -8302380603587920873L;

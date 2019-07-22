@@ -6,8 +6,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="billingAddress")
 public class BillingAddress implements Serializable{
 
 	private static final long serialVersionUID = 1992099449602885131L;

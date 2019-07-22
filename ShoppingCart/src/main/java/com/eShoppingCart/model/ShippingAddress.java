@@ -6,8 +6,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="shippingaddress")
 public class ShippingAddress implements Serializable{
 
 	private static final long serialVersionUID = -5949405485698813788L;
