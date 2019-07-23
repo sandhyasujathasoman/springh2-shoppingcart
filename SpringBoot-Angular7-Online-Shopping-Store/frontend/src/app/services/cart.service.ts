@@ -37,8 +37,9 @@ export class CartService {
         this.items = this.itemsSubject.asObservable();
         this.totalSubject = new BehaviorSubject<number>(null);
         this.total = this.totalSubject.asObservable();
+        const memo = localStorage.getItem('currentUser');
         this.userService.currentUser.subscribe(user => this.currentUser = user);
-
+        this.cookieService.set('currentUser', memo);
 
     }
 
@@ -53,6 +54,7 @@ export class CartService {
     }
 
     getCart(): Observable<ProductInOrder[]> {
+        console.log("user name is from cart: "+localStorage.getItem('currentUser'));
         const localCart = this.getLocalCart();
         if (this.currentUser) {
             if (localCart.length > 0) {

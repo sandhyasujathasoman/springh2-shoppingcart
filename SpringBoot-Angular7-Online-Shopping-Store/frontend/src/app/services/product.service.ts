@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable, of} from 'rxjs';
 import {catchError} from 'rxjs/operators';
 import {ProductInfo} from '../models/productInfo';
 import {apiUrl} from '../../environments/environment';
 import {BehaviorSubject, Observable, of, Subject} from 'rxjs';
+import {JwtResponse} from '../response/JwtResponse';
 
 @Injectable({
     providedIn: 'root'

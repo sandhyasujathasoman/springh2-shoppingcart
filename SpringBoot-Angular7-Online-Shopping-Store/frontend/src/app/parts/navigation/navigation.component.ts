@@ -4,7 +4,6 @@ import {Subscription} from "rxjs";
 import {JwtResponse} from "../../response/JwtResponse";
 import {Router} from "@angular/router";
 import {Role} from "../../enum/Role";
-
 @Component({
     selector: 'app-navigation',
     templateUrl: './navigation.component.html',

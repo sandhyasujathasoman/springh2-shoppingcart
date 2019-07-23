@@ -7,6 +7,7 @@ import {ProductInOrder} from '../../models/ProductInOrder';
 import {debounceTime, switchMap} from 'rxjs/operators';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Role} from '../../enum/Role';
+import {User} from "../../models/User";
 
 @Component({
     selector: 'app-cart',
@@ -102,9 +103,12 @@ export class CartComponent implements OnInit, OnDestroy, AfterContentChecked {
     checkout() {
         if (!this.currentUser) {
             this.router.navigate(['/login'], {queryParams: {returnUrl: this.router.url}});
+            localStorage.setItem("user",User.name);
+            console.log("current user : "+localStorage.getItem('currentUser'));
         } else if (this.currentUser.role !== Role.Customer) {
             this.router.navigate(['/seller']);
         } else {
+            localStorage.setItem("user",this.currentUser.token);
             this.cartService.checkout().subscribe(
                 _ => {
                     this.productInOrders = [];

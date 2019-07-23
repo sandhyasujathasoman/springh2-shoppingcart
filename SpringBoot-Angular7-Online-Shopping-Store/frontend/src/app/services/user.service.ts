@@ -35,6 +35,7 @@ export class UserService {
             tap(user => {
                 if (user && user.token) {
                     this.cookieService.set('currentUser', JSON.stringify(user));
+                    localStorage.setItem('currentUser', JSON.stringify(user));
                     if (loginForm.remembered) {
                         localStorage.setItem('currentUser', JSON.stringify(user));
                     }
