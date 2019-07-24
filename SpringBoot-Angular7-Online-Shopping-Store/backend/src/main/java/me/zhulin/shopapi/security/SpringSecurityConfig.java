@@ -15,6 +15,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
@@ -77,22 +78,21 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter{
                 .antMatchers("/seller/**/delete").access("hasAnyRole( 'MANAGER')")
                 .antMatchers("/seller/**").access("hasAnyRole('EMPLOYEE', 'MANAGER')")
                 .anyRequest().permitAll()
-
+                .and()
+                .formLogin()
+                .loginPage("/login.html")
+                .loginProcessingUrl("/perform_login")
+                .defaultSuccessUrl("/homepage.html", true)
+                .failureUrl("/login.html?error=true")
+                .and()
+                .logout()
+                .logoutUrl("/perform_logout")
+                .deleteCookies("JSESSIONID")
                 .and()
                 .exceptionHandling().authenticationEntryPoint(accessDenyHandler)
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED);
-
-        http.authorizeRequests().and().formLogin()
-        .loginProcessingUrl("/j_spring_security_check") 
-        .loginPage("/login")
-        .defaultSuccessUrl("/")
-        .failureUrl("/login?error=true")
-        .usernameParameter("userName")
-        .passwordParameter("password")
-        .and().logout().logoutUrl("/logout").logoutSuccessUrl("/");
         
         http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
     }
-
 }

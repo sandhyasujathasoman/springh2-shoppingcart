@@ -39,6 +39,7 @@ public class CartController {
 
     @PostMapping("")
     public ResponseEntity<Cart> mergeCart(@RequestBody Collection<ProductInOrder> productInOrders, Principal principal) {
+    	System.out.println("Inside cartcontroller");
         User user = userService.findOne(principal.getName());
         try {
             cartService.mergeLocalCart(productInOrders, user);

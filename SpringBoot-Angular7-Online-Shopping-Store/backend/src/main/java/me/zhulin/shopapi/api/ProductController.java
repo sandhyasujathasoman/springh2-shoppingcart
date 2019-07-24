@@ -30,23 +30,8 @@ public class ProductController {
 
     @GetMapping("/product")
     public Page<ProductInfo> findAll(@RequestParam(value = "page", defaultValue = "1") Integer page,
-                                     @RequestParam(value = "size", defaultValue = "3") Integer size,HttpSession session) {
-        PageRequest request = PageRequest.of(page - 1, size);
-        String name = (String)session.getAttribute("name");
-        String id = (String)session.getAttribute("id");
-        String password = (String)session.getAttribute("password");
-        String phone = (String)session.getAttribute("phone");
-        String address = (String)session.getAttribute("address");
-        String active = (String)session.getAttribute("active");
-        
-        
-        session.setAttribute("name",name);
-        session.setAttribute("id", id);
-        session.setAttribute("password", password);
-        session.setAttribute("phone", phone);
-        session.setAttribute("address", address);
-        session.setAttribute("active", active);
-        
+                                     @RequestParam(value = "size", defaultValue = "3") Integer size) {
+        PageRequest request = PageRequest.of(page - 1, size);      
         return productService.findAll(request);
     }
 
