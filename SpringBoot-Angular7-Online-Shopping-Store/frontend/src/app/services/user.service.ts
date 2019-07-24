@@ -19,6 +19,7 @@ export class UserService {
     constructor(private http: HttpClient,
                 private cookieService: CookieService) {
         const memo = localStorage.getItem('currentUser');
+        const memo1 = localStorage.getItem('username');
         this.currentUserSubject = new BehaviorSubject<JwtResponse>(JSON.parse(memo));
         this.currentUser = this.currentUserSubject.asObservable();
         cookieService.set('currentUser', memo);
@@ -34,14 +35,13 @@ export class UserService {
         return this.http.post<JwtResponse>(url, loginForm).pipe(
             tap(user => {
                 if (user && user.token) {
-                    this.cookieService.set('currentUser', JSON.stringify(user));
                     localStorage.setItem('currentUser', JSON.stringify(user));
+                    localStorage.setItem('username', user.name);
                     if (loginForm.remembered) {
                         localStorage.setItem('currentUser', JSON.stringify(user));
                     }
-                    console.log((user.name));
                     this.nameTerms.next(user.name);
-                    this.currentUserSubject.next(user);
+                    this.currentUserSubject.next(localStorage.getItem('username'));
                     return user;
                 }
             }),
