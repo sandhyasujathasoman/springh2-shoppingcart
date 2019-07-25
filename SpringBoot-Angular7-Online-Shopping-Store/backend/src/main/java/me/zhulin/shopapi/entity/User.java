@@ -200,12 +200,11 @@ public class User implements Serializable {
                 '}';
     }
 
-
-
-
-	public User() {
-		// TODO Auto-generated constructor stub
-	}
+	/*
+	 * 
+	 * 
+	 * public User() { // TODO Auto-generated constructor stub }
+	 */
 	
 
 }

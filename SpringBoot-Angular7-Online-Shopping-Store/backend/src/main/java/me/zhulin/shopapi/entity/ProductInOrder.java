@@ -210,8 +210,8 @@ public class ProductInOrder {
         return Objects.hash(super.hashCode(), id, productId, productName, productDescription, productIcon, categoryType, productPrice);
     }
 
-	public ProductInOrder() {
-		// TODO Auto-generated constructor stub
-	}
+	/*
+	 * public ProductInOrder() { // TODO Auto-generated constructor stub }
+	 */
     
 }
