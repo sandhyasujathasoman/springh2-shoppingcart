@@ -5,7 +5,7 @@ spring:
    #  url: jdbc:mysql://localhost:3306/shopapi
     url: jdbc:mysql://172.30.178.243:3306/shopapi?useSSL=false
     username: root
-    password: root
+    password: 
   jpa:
     hibernate.ddl-auto: create-drop
     generate-ddl: true
