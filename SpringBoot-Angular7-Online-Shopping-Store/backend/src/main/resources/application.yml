@@ -3,7 +3,7 @@ spring:
   datasource:
     driverClassName: com.mysql.jdbc.Driver
    #  url: jdbc:mysql://localhost:3306/shopapi
-    url: jdbc:mysql://172.30.178.243:3306/shopapi?useSSL=false
+    url: jdbc:mysql://172.30.241.35:3306/shopapi?useSSL=false
     username: user
     password: password
   jpa:
