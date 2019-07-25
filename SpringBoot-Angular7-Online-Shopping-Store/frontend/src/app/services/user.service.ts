@@ -41,7 +41,7 @@ export class UserService {
                         localStorage.setItem('currentUser', JSON.stringify(user));
                     }
                     this.nameTerms.next(user.name);
-                    this.currentUserSubject.next(localStorage.getItem('username'));
+                    this.currentUserSubject.next(user.name);
                     return user;
                 }
             }),
