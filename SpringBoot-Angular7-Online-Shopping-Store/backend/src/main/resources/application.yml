@@ -2,17 +2,10 @@
 spring:
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-<<<<<<< HEAD
-    url: jdbc:mysql://localhost:3306/shopapi
-  #  url: jdbc:mysql://172.30.178.243:3306/shopapi?useSSL=false
-    username: root
-    password: root
-=======
    #  url: jdbc:mysql://localhost:3306/shopapi
     url: jdbc:mysql://172.30.152.63:3306/shopapi?useSSL=false
     username: user
     password: password
->>>>>>> c6926918386cb173b658ac4f628ef94e039a654e
   jpa:
     hibernate.ddl-auto: create-drop
     generate-ddl: true
