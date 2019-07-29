@@ -63,10 +63,10 @@ public class Cart implements Serializable {
 	public Cart(User user) {
 		this.user = user;
 	}
-
-	public Cart() {
-
-		// TODO Auto-generated constructor stub
-	}
+	/*
+	 * public Cart() {
+	 * 
+	 * // TODO Auto-generated constructor stub }
+	 */
 
 }
