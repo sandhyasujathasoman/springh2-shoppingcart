@@ -2,7 +2,7 @@
 spring:
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-   #  url: jdbc:mysql://localhost:3306/shopapi
+  #   url: jdbc:mysql://localhost:3306/shopapi
     url: jdbc:mysql://172.30.152.63:3306/shopapi?useSSL=false
     username: user
     password: password
@@ -33,6 +33,6 @@ server:
     session:
       timeout: 20
         
-
+  port: 8081
 jwtSecret: me.zhulin
 jwtExpiration: 86400

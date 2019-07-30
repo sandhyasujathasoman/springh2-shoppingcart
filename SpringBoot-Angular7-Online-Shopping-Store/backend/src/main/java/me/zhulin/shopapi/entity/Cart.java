@@ -63,6 +63,7 @@ public class Cart implements Serializable {
 	public Cart(User user) {
 		this.user = user;
 	}
+
 	/*
 	 * public Cart() {
 	 * 

@@ -157,6 +157,7 @@ public class OrderMain implements Serializable {
         this.orderStatus = 0;
 
     }
+
 	/*
 	 * public OrderMain() { // TODO Auto-generated constructor stub }
 	 */
